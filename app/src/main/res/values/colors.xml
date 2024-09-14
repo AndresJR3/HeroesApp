@@ -20,4 +20,6 @@
 
     <!-- Background Color (Main Background) -->
     <color name="background">#F4F4F4</color>
+    <color name="button_background_color">#FF5722</color> <!-- Un color naranja -->
+
 </resources>
