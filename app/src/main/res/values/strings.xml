@@ -6,4 +6,5 @@
     <string name="welcome_text">Hola, Andrés</string>
     <string name="our_categories_text">Nuestras categorias</string>
     <string name="best_heroes">Busca los mejores SuperHeroes</string>
+    <string name="publisher_name">Nombre de la compañia</string>
 </resources>
