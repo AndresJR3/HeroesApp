@@ -24,9 +24,9 @@ class HeroesActivity : AppCompatActivity() {
         heroesDescription = findViewById(R.id.heroe_description)
         heroesImageView = findViewById(R.id.heroe_image)
 
-        val IdHeroe = intent.getIntExtra("heroeId", 0)
+        val heroeId = intent.getIntExtra("heroeId", 0)
 
-        val heroe = Heroe.heroes.firstOrNull { heroe: Heroe -> heroe.id == IdHeroe }
+        val heroe = Heroe.heroes.firstOrNull { heroe: Heroe -> heroe.id == heroeId }
 
         heroesTextView.text = heroe?.name
         heroesDescription.text = heroe?.description

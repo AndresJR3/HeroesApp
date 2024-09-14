@@ -5,7 +5,7 @@ data class Heroe(
     val name: String,
     val description : String,
     val image: String,
-    val PublisherId : Int){
+    val publisherId : Int){
     companion object {
         val heroes = mutableListOf<Heroe>(
 
@@ -21,7 +21,7 @@ data class Heroe(
             Heroe(9, "DareDevil", "Un abogado ciego que, tras un accidente con residuos radiactivos, desarrolla sentidos extraordinariamente agudos. Como Daredevil, protege las calles de Hell's Kitchen en Nueva York, usando sus habilidades acrobáticas y un agudo sentido del oído para luchar contra el crimen.", "https://toppng.com/uploads/preview/daredevil-marvel-comics-daredevil-11563000070zqj279vyx3.png",1),
             Heroe(10, "Black Panter","Rey de Wakanda, una nación tecnológicamente avanzada en África. Tras heredar el manto de Black Panther, usa su traje avanzado y habilidades sobrehumanas para proteger a su pueblo y el mundo.","https://seeklogo.com/images/B/black-panther-logo-F501CACF2C-seeklogo.com.png",1),
 
-
+            // DC
             Heroe(11, "Superman", "Un alienígena del planeta Krypton con superpoderes que incluyen fuerza sobrehumana, vuelo y visión de rayos X. Es un símbolo de justicia y protector de la Tierra.", "https://cdn.pixabay.com/photo/2016/03/31/19/40/superman-1293658_1280.png", 2),
             Heroe(12, "Batman (Bruce Wayne)", "Un millonario que lucha contra el crimen en Gotham usando su intelecto, habilidades de combate y tecnología avanzada, motivado por la muerte de sus padres.", "https://cdn.pixabay.com/photo/2013/07/12/19/11/batman-154274_1280.png", 2),
             Heroe(13, "Wonder Woman (Diana Prince)", "Una guerrera amazona inmortal con habilidades sobrehumanas y un lazo de la verdad. Es un símbolo de fuerza y compasión.", "https://cdn.pixabay.com/photo/2017/06/13/21/06/wonder-woman-2402016_1280.png", 2),

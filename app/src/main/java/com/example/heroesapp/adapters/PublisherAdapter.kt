@@ -9,11 +9,14 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.heroesapp.R
 import com.example.heroesapp.models.Heroe
+import com.example.heroesapp.models.Publisher
 import com.squareup.picasso.Picasso
 
-class PublisherAdapter(val heroesList : List<Heroe>, val onClick : (Heroe)->Unit) : RecyclerView.Adapter<PublisherViewHolder>(){ //Para activar el método
+class PublisherAdapter(
+    val heroesList: MutableList<Publisher>,
+    val onClick: (Publisher)->Unit) : RecyclerView.Adapter<PublisherViewHolder>(){ //Para activar el método
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PublisherViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.heroe_item,parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.publisher_item,parent,false)
         return PublisherViewHolder(view)
     }
 
@@ -22,18 +25,18 @@ class PublisherAdapter(val heroesList : List<Heroe>, val onClick : (Heroe)->Unit
     }
 
     override fun onBindViewHolder(holder: PublisherViewHolder, position: Int) {
-        val heroe = heroesList[position]
-        holder.heroeName.text = heroe.name
-        Picasso.get().load(heroe.image).into(holder.heroeImage)
+        val publisher = heroesList[position]
+        holder.heroeName.text = publisher.name
+        Picasso.get().load(publisher.image).into(holder.publisherImage)
 
         holder.itemView.setOnClickListener {
-            onClick(heroe)
+            onClick(publisher)
         }
     }
 
 }
 
 class PublisherViewHolder(view: View): ViewHolder(view){
-    val heroeImage : ImageView = view.findViewById(R.id.heroe_image)
-    val heroeName : TextView = view.findViewById(R.id.heroe_name)
+    val publisherImage : ImageView = view.findViewById(R.id.publisher_image)
+    val heroeName : TextView = view.findViewById(R.id.publisher_name)
 }

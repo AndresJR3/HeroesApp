@@ -9,8 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.heroesapp.R
-import com.example.heroesapp.adapters.HeroesDetailActivity
+import com.example.heroesapp.adapters.HeroeAdapter
+import com.example.heroesapp.adapters.PublisherAdapter
 import com.example.heroesapp.models.Heroe
+import com.example.heroesapp.models.Publisher
 
 class PublisherActivity : AppCompatActivity() {
     lateinit var publisherTitle : TextView
@@ -19,24 +21,24 @@ class PublisherActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_heroe)
+        setContentView(R.layout.activity_publisher)
 
         publisherTitle = findViewById(R.id.publisher_title)
         heroesRecyclerView = findViewById(R.id.heroe_recyclerview)
 
-        val HeroesId = intent.getIntExtra("restaurantId",0) // la llave con la que pasamos nuestro id
-        Log.i("RestaurantActivity","El Id que me pasaron es: ${HeroesId}")
+        val publisherId = intent.getIntExtra("publisherId",0) // la llave con la que pasamos nuestro id
+        Log.i("PublisherActivity","El Id que me pasaron es: ${publisherId}")
 
-        val heroe = Heroe.heroes.firstOrNull { heroe ->
-            heroe.id == HeroesId
+        val publisher = Publisher.publisher.firstOrNull { publisher ->
+            publisher.id == publisherId
         }
-        Log.i("PublisherActivity",heroe.toString())
-        publisherTitle.text = heroe?.name
+        Log.i("PublisherActivity",publisher.toString())
+        publisherTitle.text = publisher?.name
         val heroes = Heroe.heroes.filter { heroe ->
-            heroe.PublisherId == HeroesId
+            heroe.publisherId == publisherId
         }
-        Log.i("PublisherActivity",heroe.toString())
-        heroesRecyclerView.adapter = HeroesDetailActivity(heroes){ heroe->
+        Log.i("PublisherActivity",heroes.toString())
+        heroesRecyclerView.adapter = HeroeAdapter(heroes){ heroe->
             val intent = Intent(this@PublisherActivity,HeroesActivity::class.java)
             intent.putExtra("heroeId",heroe.id)
             startActivity(intent)

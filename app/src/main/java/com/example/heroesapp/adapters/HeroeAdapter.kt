@@ -11,7 +11,8 @@ import com.example.heroesapp.R
 import com.example.heroesapp.models.Heroe
 import com.squareup.picasso.Picasso
 
-class HeroesDetailActivity(val heroeList : List<Heroe>, val onClick : (Heroe)->Unit) : RecyclerView.Adapter<HeroeViewHolder>(){ //Para activar el método
+class HeroeAdapter(val heroeList : List<Heroe>,
+                           val onClick : (Heroe)->Unit) : RecyclerView.Adapter<HeroeViewHolder>(){ //Para activar el método
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeroeViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.heroe_item,parent,false)
         return HeroeViewHolder(view)

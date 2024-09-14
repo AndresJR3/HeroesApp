@@ -24,7 +24,7 @@
         />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/publisher_recyclerview"
+        android:id="@+id/heroe_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
